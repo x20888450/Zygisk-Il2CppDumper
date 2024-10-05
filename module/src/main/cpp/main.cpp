@@ -7,12 +7,15 @@
 
 extern char **environ;
 
-
 using zygisk::Api;
 using zygisk::AppSpecializeArgs;
 using zygisk::ServerSpecializeArgs;
 
 class MyModule : public zygisk::ModuleBase {
+private:
+    Api *api;
+    JNIEnv *env;
+
 public:
     void onLoad(Api *api, JNIEnv *env) override {
         this->api = api;
