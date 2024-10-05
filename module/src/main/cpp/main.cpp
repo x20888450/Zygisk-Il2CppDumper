@@ -3,6 +3,9 @@
 #include <sstream>
 #include <unistd.h>
 #include <sys/stat.h>
+#include "zygisk.hpp"
+
+extern char **environ;
 
 class MyModule : public zygisk::ModuleBase {
 public:
