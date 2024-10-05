@@ -25,12 +25,6 @@ public:
     }
 
     void preAppSpecialize(AppSpecializeArgs *args) override {
-        // auto package_name = env->GetStringUTFChars(args->nice_name, nullptr);
-        // auto app_data_dir = env->GetStringUTFChars(args->app_data_dir, nullptr);
-        // preSpecialize(package_name, app_data_dir);
-        // env->ReleaseStringUTFChars(args->nice_name, package_name);
-        // env->ReleaseStringUTFChars(args->app_data_dir, app_data_dir);
-
         LOGD("preAppSpecialize called");  // 输出函数调用日志
     }
 
@@ -46,4 +40,12 @@ public:
             LOGD("Environment variable: %s", *envs);  // 输出环境变量
         }
     }
+    
+// private:
+    // Api *api;
+
+    // void preSpecialize(const char *package_name, const char *app_data_dir) {
+    // }
 };
+
+REGISTER_ZYGISK_MODULE(MyModule)
