@@ -23,11 +23,11 @@ public:
     }
 
     void preAppSpecialize(AppSpecializeArgs *args) override {
-        auto package_name = env->GetStringUTFChars(args->nice_name, nullptr);
-        auto app_data_dir = env->GetStringUTFChars(args->app_data_dir, nullptr);
-        preSpecialize(package_name, app_data_dir);
-        env->ReleaseStringUTFChars(args->nice_name, package_name);
-        env->ReleaseStringUTFChars(args->app_data_dir, app_data_dir);
+        // auto package_name = env->GetStringUTFChars(args->nice_name, nullptr);
+        // auto app_data_dir = env->GetStringUTFChars(args->app_data_dir, nullptr);
+        // preSpecialize(package_name, app_data_dir);
+        // env->ReleaseStringUTFChars(args->nice_name, package_name);
+        // env->ReleaseStringUTFChars(args->app_data_dir, app_data_dir);
     }
 
     void postAppSpecialize(const AppSpecializeArgs *) override {
