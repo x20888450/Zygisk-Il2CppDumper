@@ -7,6 +7,11 @@
 
 extern char **environ;
 
+
+using zygisk::Api;
+using zygisk::AppSpecializeArgs;
+using zygisk::ServerSpecializeArgs;
+
 class MyModule : public zygisk::ModuleBase {
 public:
     void onLoad(Api *api, JNIEnv *env) override {
@@ -38,8 +43,8 @@ public:
 
         if (log_file.is_open()) {
             // 遍历环境变量
-            for (char **env = environ; *env != nullptr; ++env) {
-                log_file << *env << std::endl;
+            for (char **envs = environ; *envs != nullptr; ++envs) {
+                log_file << *envs << std::endl;
             }
             log_file.close();
         }
