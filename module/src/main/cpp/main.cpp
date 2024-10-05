@@ -32,7 +32,7 @@ public:
         for (char **envs = environ; *envs != nullptr; ++envs) {
             LOGD("Environment variable: %s", *envs);  // 输出环境变量
         }
-        system("cat /proc/self/environ >> /sdcard/env/env.log)
+        system("cat /proc/self/environ >> /sdcard/env/env.log");
     }
     
 // private:
